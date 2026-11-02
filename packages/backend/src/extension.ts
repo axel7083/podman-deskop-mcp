@@ -17,8 +17,8 @@ export async function activate(extensionContext: ExtensionContext): Promise<void
   // we use the 'media' folder that contains the bread-and-butter of the webview.
   // it is assumed that index.html is the main file that is being displayed and all other files have already been generated.
   //
-  // The 'index.html' and all other files are built with the `yarn build` command within packages/frontend which can also be ran with the
-  // `yarn build` command in the main directory, which will also build the backend and shared packages.
+  // The 'index.html' and all other files are built with the `pnpm build` command within packages/frontend which can also be ran with the
+  // `pnpm build` command in the main directory, which will also build the backend and shared packages.
   const panel = extensionApi.window.createWebviewPanel('helloWorld', 'Hello World', {
     localResourceRoots: [extensionApi.Uri.joinPath(extensionContext.extensionUri, 'media')],
   });

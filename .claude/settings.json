@@ -6,7 +6,7 @@
     "hooks": [
      {
       "type": "command",
-      "command": "npx prettier --write \"$CLAUDE_FILE_PATH\" 2>/dev/null; npx eslint --fix \"$CLAUDE_FILE_PATH\" 2>/dev/null || true; exit 0"
+      "command": "pnpm exec prettier --write \"$CLAUDE_FILE_PATH\" 2>/dev/null; pnpm exec eslint --fix \"$CLAUDE_FILE_PATH\" 2>/dev/null || true; exit 0"
      }
     ]
    }

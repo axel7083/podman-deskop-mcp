@@ -11,6 +11,6 @@ Use this guide when modifying `packages/frontend`.
 ## Validation
 
 ```sh
-npm run svelte:check
-npm run test:frontend
+pnpm svelte:check
+pnpm test:frontend
 ```

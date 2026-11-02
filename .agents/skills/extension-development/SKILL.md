@@ -18,6 +18,6 @@ Use this guide for end-to-end feature work across backend/frontend/shared.
 ## Validation
 
 ```sh
-npm run typecheck
-npm run test
+pnpm typecheck
+pnpm test
 ```

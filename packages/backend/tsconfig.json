@@ -1,31 +1,23 @@
 {
   "compilerOptions": {
-    "strict":true,
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "Node",
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
-    "lib": [
-      "ES2017",
-      "webworker",
-      "dom",
-    ],
-    "sourceMap": true,
-    "outDir": "dist",
-    "allowSyntheticDefaultImports": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "verbatimModuleSyntax": true,
     "skipLibCheck": true,
-    "types": [
-      "node",
-    ],
+    "types": ["node"],
+    "forceConsistentCasingInFileNames": true,
     "paths": {
+      "/@/*": ["./src/*"],
       "/@shared/*": ["../shared/*"]
     }
   },
-  "include": [
-    "src",
-    "types/*.d.ts",
-    "../../types/*.d.ts",
-    "../shared/*.ts",
-    "../shared/**/*.ts"
-  ],
+  "include": ["src/**/*.ts", "vite.config.ts", "vitest.config.ts", "../../types/*.d.ts", "../shared/**/*.ts"],
+  "exclude": ["../shared/*.config.ts"]
 }

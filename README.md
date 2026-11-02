@@ -32,7 +32,8 @@ The tech stack for this extension template includes:
 * TypeScript
 * Svelte 5
 * TailwindCSS
-* npm
+* pnpm
+* Vite
 
 ## Architecture
 
@@ -44,16 +45,21 @@ The template is organized into three packages:
 
 ## Development
 
+Prerequisites: Node.js 24 from [`.nvmrc`](.nvmrc) and the pinned pnpm version from [`package.json`](package.json).
+
 To build and develop the extension, follow these steps:
 
 1. Clone the project or your fork:
 ```sh
-$ git clone https://github.com/containers/podman-desktop-extension-template-webview/
+$ git clone https://github.com/axel7083/podman-deskop-mcp.git
+$ cd podman-deskop-mcp
 ```
 
-2. Run `npm install` to install all relevant packages:
+2. Select the Node.js version, enable Corepack, and install all relevant packages:
 ```sh
-$ npm install
+$ nvm use
+$ corepack enable
+$ pnpm install --frozen-lockfile
 ```
 
 3. Create a build:
@@ -61,13 +67,13 @@ $ npm install
 Creating a build will generate all required files for Podman Desktop to load the extension:
 
 ```sh
-$ npm run build
+$ pnpm build
 ```
 
-In the `package.json` and `vite.config.js` files, we create a directory in `/packages/backend/media` that contains all the webview components. You will see output like the following:
+In the `package.json` and `vite.config.ts` files, we create a directory in `/packages/backend/media` that contains all the webview components. You will see output like the following:
 
 ```sh
-$ npm run build
+$ pnpm build
 ...
 [0] transforming...
 [0] ✓ 140 modules transformed.
@@ -84,16 +90,16 @@ $ npm run build
 [0] ../backend/media/index-ChFLTcUn.css                 116.79 kB
 [0] ../backend/media/index-B6Ge7rjZ.js                  125.62 kB │ map: 1,670.57 kB
 [0] ✓ built in 1.49s
-[0] npm run -w packages/frontend build exited with code 0
+[0] pnpm --filter ./packages/frontend build exited with code 0
 ✨  Done in 3.02s.
 ```
 
 These files will be loaded from the extension.
 
-Optionally, you can also use `npm run watch` to continuously rebuild after each change, without needing to re-run `npm build`:
+Optionally, you can also use `pnpm watch` to continuously rebuild after each change, without needing to re-run `pnpm build`:
 
 ```sh
-$ npm run watch
+$ pnpm watch
 ```
 
 4. Load the extension within Podman Desktop:
@@ -121,24 +127,24 @@ We include additional tools to assist in development, which can be found in the 
 
 Formatter:
 ```sh
-$ npm run format:fix
+$ pnpm format:fix
 ```
 
 Linter:
 ```sh
-$ npm run lint:fix
+$ pnpm lint:fix
 ```
 
 Typechecker:
 ```sh
-$ npm run typecheck
+$ pnpm typecheck
 ```
 
 ## Packaging and Publishing
 
 More information on how to package and publish your extension can be found in our [official publishing documentation](https://podman-desktop.io/docs/extensions/publish).
 
-However, we have provided a pre-made Containerfile in this template for you to try.
+However, we have provided a pre-made Containerfile in this template for you to try. It builds the extension from source, so prebuilt `dist/` and `media/` directories are not required.
 
 1. Package your extension by building the image:
 
@@ -155,3 +161,5 @@ $ podman push quay.io/myusername/myextension
 3. Install via the Podman Desktop "Install Custom..." button:
 
 ![custom install](/images/custom_install.png)
+
+The manually dispatched `release` workflow accepts a semantic version and branch, then publishes the image to `ghcr.io/<owner>/<repository>:<version>`. Stable releases also receive the `latest` tag; prereleases do not.

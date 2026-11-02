@@ -6,40 +6,42 @@ Full Podman Desktop extension template with separate backend, frontend, and
 shared packages. This template demonstrates a production-style setup for RPC
 communication between a Svelte webview and extension backend.
 
-- **Tech stack**: TypeScript, Svelte 5, Tailwind CSS, npm workspaces
+- **Tech stack**: TypeScript, Node.js 24, Svelte 5, Tailwind CSS, pnpm workspaces, Vite
 - **Packages**: `packages/backend`, `packages/frontend`, `packages/shared`
 - **Extension API**: `@podman-desktop/api`
 
 ## Quick Start
 
 ```sh
-npm install
-npm run build
+nvm use
+corepack enable
+pnpm install --frozen-lockfile
+pnpm build
 ```
 
 ## Essential Commands
 
 ```sh
-npm run build          # build frontend + backend
-npm run watch          # watch frontend + backend
-npm run lint:check
-npm run lint:fix
-npm run format:check
-npm run format:fix
-npm run typecheck
-npm run test
+pnpm build          # build frontend + backend
+pnpm watch          # watch frontend + backend
+pnpm lint:check
+pnpm lint:fix
+pnpm format:check
+pnpm format:fix
+pnpm typecheck
+pnpm test
 ```
 
 ## Single-File Verification
 
 ```sh
-npx eslint path/to/file.ts
-npx tsc --noEmit -p packages/backend/tsconfig.json
-npx tsc --noEmit -p packages/frontend/tsconfig.json
-npx tsc --noEmit -p packages/shared/tsconfig.json
-npm run test:backend
-npm run test:frontend
-npm run test:shared
+pnpm exec eslint path/to/file.ts
+pnpm exec tsc --noEmit -p packages/backend/tsconfig.json
+pnpm exec tsc --noEmit -p packages/frontend/tsconfig.json
+pnpm exec tsc --noEmit -p packages/shared/tsconfig.json
+pnpm test:backend
+pnpm test:frontend
+pnpm test:shared
 ```
 
 ## Skills
