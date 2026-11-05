@@ -36,7 +36,7 @@
     "autoprefixer": "^10.4.20",
     "concurrently": "^8.2.2",
     "eslint": "^10.12.0",
-    "globals": "^17.13.0",
+    "globals": "^17.14.0",
     "prettier": "^3.3.3",
     "prettier-plugin-svelte": "^3.4.0",
     "svelte": "^5.55.7",
