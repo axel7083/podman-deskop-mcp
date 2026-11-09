@@ -305,8 +305,8 @@ importers:
         specifier: ^10.4.20
         version: 10.6.2(postcss@8.5.32)
       filesize:
-        specifier: ^10.1.4
-        version: 10.1.6
+        specifier: ^11.0.30
+        version: 11.0.30
       humanize-duration:
         specifier: ^3.32.1
         version: 3.35.0
@@ -1188,9 +1188,9 @@ packages:
   file-entry-cache@11.1.5:
     resolution: {integrity: sha512-+PFTHITI08JIGhnNpGNI8T8inUpgZfk3GNEqfT9R2zZV2iFXg3CvqzSl/uEhs7TSGujYRELEANyDvS8Fj7+S7Q==}
 
-  filesize@10.1.6:
-    resolution: {integrity: sha512-sJslQKU2uM33qH5nqewAwVB2QgR6w1aMNsYUp3aN5rMRyXEwJGmZvaWzeJFNTOXWlHQyBFCWrdj3fV/fsTOX8w==}
-    engines: {node: '>= 10.4.0'}
+  filesize@11.0.30:
+    resolution: {integrity: sha512-qaIUqg5pU4bdTZQG8w+v5IhPAlOHm/ifT+1NlBuPTlmIAKeBwG1CEYkaLYNLJCfDOGWb7QqXUyQnsYlIC7pAwA==}
+    engines: {node: '>= 10.8.0'}
 
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
@@ -2894,7 +2894,7 @@ snapshots:
     dependencies:
       flat-cache: 6.1.23
 
-  filesize@10.1.6: {}
+  filesize@11.0.30: {}
 
   fill-range@7.1.1:
     dependencies:
